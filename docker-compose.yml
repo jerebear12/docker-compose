@@ -1,0 +1,19 @@
+version: "3.8"
+services: 
+
+  master:
+    build: ./master
+    network_mode: "host"
+  
+  filer:
+    build: ./filer
+    network_mode: "host"
+  
+  volume:
+    build: ./volume
+    network_mode: "host"
+    volumes:
+     - sfs_data:/data
+ 
+volumes:
+  sfs_data:
